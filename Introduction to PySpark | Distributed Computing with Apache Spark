@@ -1,0 +1,20 @@
+### Datasets are becoming huge. Infact, data is growing faster than processing speeds. Therefore, algorithms involving large data and high amount of computation are often run on a distributed computing system. A distributed computing system involves nodes (networked computers) that run processes in parallel and communicate (if, necessary).
+
+## MapReduce – The programming model that is used for Distributed computing is known as MapReduce. The MapReduce model involves two stages, Map and Reduce.
+
+1. Map – The mapper processes each line of the input data (it is in the form of a file), and produces key – value pairs.
+  Input data → Mapper → list([key, value])
+2. Reduce – The reducer processes the list of key – value pairs (after the Mapper’s function). It outputs a new set of key – value pairs.
+  list([key, value]) → Reducer → list([key, list(values)])
+
+### Spark – Spark (open source Big-Data processing engine by Apache) is a cluster computing system. It is faster as compared to other cluster computing systems (such as, Hadoop). It provides high level APIs in Python, Scala, and Java. Parallel jobs are easy to write in Spark.
+
+We will see how to create RDDs (fundamental data structure of Spark).
+
+## RDDs (Resilient Distributed Datasets) – RDDs are immutable collection of objects. Since we are using PySpark, these objects can be of multiple types. These will become more clear further.
+
+## SparkContext – For creating a standalone application in Spark, we first define a SparkContext :
+  from pyspark import SparkConf, SparkContext 
+  conf = SparkConf().setMaster("local").setAppName("Test") 
+  # setMaster(local) - we are doing tasks on a single machine 
+  sc = SparkContext(conf = conf) 
